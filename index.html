@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Unit Converter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="images/logo.png" alt="AI Services Logo" class="logo">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Advanced Unit Converter</h1>
+        
+        <label for="category">Select Category:</label>
+        <select id="category" onchange="populateUnits()">
+            <option value="length">Length</option>
+            <option value="weight">Weight</option>
+            <option value="temperature">Temperature</option>
+            <option value="volume">Volume</option>
+            <option value="time">Time</option>
+            <option value="speed">Speed</option>
+            <option value="data">Data</option>
+            <option value="angle">Angle</option>
+            <option value="pressure">Pressure</option>
+        </select>
+
+        <div id="converter">
+            <input type="number" id="inputValue" placeholder="Enter value" oninput="convertUnit()">
+            <select id="inputUnit" onchange="convertUnit()" title="Select input unit"></select>
+            <span>to</span>
+            <select id="outputUnit" onchange="convertUnit()" title="Select output unit"></select>
+            <input type="text" id="outputValue" readonly title="Converted result">
+        </div>
+        
+        <label for="precision">Decimal Precision:</label>
+        <input type="number" id="precision" min="0" max="10" value="2" onchange="convertUnit()" title="Select decimal precision for result">
+
+        <div id="recentConversions">
+            <h2>Recent Conversions</h2>
+            <ul id="history"></ul>
+        </div>
+
+        <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    </div>
+    <script src="script.js"></script>
+        <div class="description"> 
+            <h2>Select a Category:</h2> 
+            <p>- At the top, you’ll find a dropdown menu labeled "Select Category." 
+            - Choose the category of units you want to convert from options like Length, Weight, Temperature, Volume, Time, Speed, Data, Angle, and Pressure.
+            - Selecting a category updates the available units in the input and output unit dropdowns.</p>
+            <br>
+            <h2>2. Enter the Value to Convert:</h2>
+            <p>In the "Enter value" input box, type the numeric value you want to convert.
+            - As soon as you enter a value, the tool will automatically calculate the conversion result.</p>
+            <br>
+            <h2>3. Select Input and Output Units:</h2>
+            <p>- Use the "From" and "To" dropdowns to select your input and output units within the chosen category.
+            - Hover over a unit to see a tooltip that provides details on its context and typical usage.
+            - The converted result will appear instantly in the output field based on your selection.</p>
+            <br>
+            <h2>4. Adjust Precision:</h2>
+            <p>- Below the unit selection, you Will ll see an option labeled "Decimal Precision."
+            - Enter the number of decimal places you want in the result (e.g., 2 for 3.14).
+            - This feature is especially useful for scientific, engineering, and medical calculations that require precision.</p>
+            <br>
+            <h2>5. View Recent Conversions:</h2>
+            <p>- Your recent conversions are saved and displayed in the "Recent Conversions" section, found below the converter.
+            - This allows you to quickly access and review previous conversions without re-entering values.</p>
+
+            <h2>6. Toggle Dark Mode:</h2>
+            <p>- Use the "Toggle Dark Mode" button to switch between light and dark themes.
+            - Dark mode reduces eye strain and makes it easier to use the tool in low-light conditions.</p>
+        </div>
+    <footer>
+        <p>&copy; 2024 AI Services. All rights reserved.</p>
+    </footer>
+</body>
+</html>
